@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+        "coenraads.bracket-pair-colorizer",
+        "dotjoshjohnson.xml",
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "ionceflorin.copy-current-file-path",
+        "ionutvmi.path-autocomplete",
+        "mhutchie.git-graph",
+        "ms-python.python",
+        "ms-vscode.go",
+        "vincaslt.highlight-matching-tag",
+        "vscode-icons-team.vscode-icons"
+    ]
+}
