@@ -1,5 +1,8 @@
 <template>
-    <div class="hello">{{msg}}</div>
+    <div class="hello-world">
+        <div class="hello">{{msg}}</div>
+        <a-date-picker></a-date-picker>
+    </div>
 </template>
 
 <script>
