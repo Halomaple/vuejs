@@ -3,10 +3,11 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "start": "vue-cli-service lint && vue-cli-service serve",
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint"
+        "test:unit": "vue-cli-service test:unit",
+        "lint": "vue-cli-service lint",
+        "start": "vue-cli-service lint && vue-cli-service serve"
     },
     "dependencies": {
         "ant-design-vue": "^1.4.5",
@@ -17,7 +18,9 @@
     "devDependencies": {
         "@vue/cli-plugin-babel": "^4.0.0",
         "@vue/cli-plugin-eslint": "^4.0.0",
+        "@vue/cli-plugin-unit-jest": "^4.0.5",
         "@vue/cli-service": "^4.0.0",
+        "@vue/test-utils": "1.0.0-beta.29",
         "babel-eslint": "^10.0.3",
         "eslint": "^5.16.0",
         "eslint-plugin-vue": "^5.0.0",
@@ -35,7 +38,18 @@
         "rules": {},
         "parserOptions": {
             "parser": "babel-eslint"
-        }
+        },
+        "overrides": [
+            {
+                "files": [
+                    "**/**/*.spec.{j,t}s?(x)",
+                    "**/**/*.test.{j,t}s?(x)"
+                ],
+                "env": {
+                    "jest": true
+                }
+            }
+        ]
     },
     "postcss": {
         "plugins": {

@@ -1,7 +1,6 @@
 <template>
     <div class="hello-world">
         <div class="hello">{{msg}}</div>
-        <a-date-picker></a-date-picker>
     </div>
 </template>
 
@@ -10,7 +9,7 @@ export default {
     name: 'HelloWorld',
     data: function() {
         return {
-            msg: 'vue!'
+            msg: 'Vue!'
         };
     }
 };
