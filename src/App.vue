@@ -1,20 +1,22 @@
 <template>
     <a-locale-provider :locale="locale">
         <div id="app">
-            <HelloWorld />
+            <a-button type="primary">
+                <router-link to="/">HelloWorld</router-link>
+            </a-button>
+            <a-button type="danger">
+                <router-link to="/about">About</router-link>
+            </a-button>
+            <router-view />
         </div>
     </a-locale-provider>
 </template>
 
 <script>
 import zh_CN from 'ant-design-vue/lib/locale-provider/zh_CN';
-import HelloWorld from './components/HelloWorld.vue';
 
 export default {
     name: 'app',
-    components: {
-        HelloWorld
-    },
     data: function() {
         return { locale: zh_CN };
     }
@@ -28,5 +30,9 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+}
+
+button {
+    margin: 20px;
 }
 </style>
