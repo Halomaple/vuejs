@@ -1,12 +1,10 @@
 <template>
     <a-locale-provider :locale="locale">
         <div id="app">
-            <a-button type="primary">
-                <router-link to="/">HelloWorld</router-link>
-            </a-button>
-            <a-button type="danger">
-                <router-link to="/about">About</router-link>
-            </a-button>
+            <a-radio-group :value="tab" @change="handleTabChange">
+                <a-radio-button value="HelloWorld">HelloWorld</a-radio-button>
+                <a-radio-button value="About">About</a-radio-button>
+            </a-radio-group>
             <router-view />
         </div>
     </a-locale-provider>
@@ -14,11 +12,18 @@
 
 <script>
 import zh_CN from 'ant-design-vue/lib/locale-provider/zh_CN';
+import router from './router';
 
 export default {
     name: 'app',
     data: function() {
-        return { locale: zh_CN };
+        return { locale: zh_CN, tab: 'HelloWorld' };
+    },
+    methods: {
+        handleTabChange(e) {
+            this.tab = e.target.value;
+            router.push({ path: this.tab });
+        }
     }
 };
 </script>
