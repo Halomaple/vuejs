@@ -1,5 +1,5 @@
 <template>
-    <a-locale-provider :locale="locale">
+    <a-config-provider :locale="locale">
         <div id="app">
             <a-radio-group :value="tab" @change="handleTabChange">
                 <a-radio-button value="HelloWorld">HelloWorld</a-radio-button>
@@ -7,7 +7,7 @@
             </a-radio-group>
             <router-view />
         </div>
-    </a-locale-provider>
+    </a-config-provider>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
     methods: {
         handleTabChange(e) {
             this.tab = e.target.value;
-            router.push({ path: this.tab });
+            router.push({ path: this.tab }).catch(err => err);
         }
     }
 };
